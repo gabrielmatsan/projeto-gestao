@@ -1,5 +1,5 @@
+import { Calendar, Clock, FileText, Key } from 'lucide-react';
 import { MenuItem } from '../types';
-import { Key, Calendar, FileText, Clock } from 'lucide-react';
 
 export const menuItems: MenuItem[] = [
   {
@@ -8,6 +8,7 @@ export const menuItems: MenuItem[] = [
     description: 'Pegou a chave',
     icon: Key,
     color: 'bg-blue-500',
+    route: '/chave',
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ export const menuItems: MenuItem[] = [
     description: 'Calendário e integração Google',
     icon: Calendar,
     color: 'bg-green-500',
+    route: '/agendamentos',
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const menuItems: MenuItem[] = [
     description: 'Registro de observações',
     icon: FileText,
     color: 'bg-purple-500',
+    route: '/observacoes',
   },
   {
     id: 4,
@@ -29,5 +32,6 @@ export const menuItems: MenuItem[] = [
     description: 'Controle de ponto',
     icon: Clock,
     color: 'bg-orange-500',
+    route: '/ponto',
   },
 ];

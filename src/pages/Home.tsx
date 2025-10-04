@@ -1,11 +1,14 @@
-import React from 'react';
-import { Header, MenuCard } from '../components';
-import { menuItems } from '../constants/menuItems';
+import { useNavigate } from "react-router-dom";
+import { Header, MenuCard } from "../components";
+import { menuItems } from "../constants/menuItems";
 
-const Home: React.FC = () => {
-  const handleCardClick = (title: string) => {
-    console.log(`Clicked on: ${title}`);
-    // TODO: Implement navigation
+export function Home() {
+  const navigate = useNavigate();
+
+  const handleCardClick = (route?: string) => {
+    if (route) {
+      navigate(route);
+    }
   };
 
   return (
@@ -21,13 +24,13 @@ const Home: React.FC = () => {
             <MenuCard
               key={item.id}
               item={item}
-              onClick={() => handleCardClick(item.title)}
+              onClick={() => handleCardClick(item.route)}
             />
           ))}
         </div>
       </main>
     </div>
   );
-};
+}
 
 export default Home;
